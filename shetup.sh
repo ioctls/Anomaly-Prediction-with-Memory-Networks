@@ -14,9 +14,9 @@ if [ "$option" -eq 0 ]; then
 	virtualenv -p python3 anomaly
 	source anomaly/bin/activate
 	echo y | sudo -H pip3 install tensorflow==1.5
-	echo Y | sudo -H pip3 install numpy scipy pandas matplotlib
+	echo Y | sudo -H pip3 install numpy scipy pandas matplotlib rrcf
 	echo y | sudo -H pip3 install ipython[all]
-	echo y | sudo -H pip3 install jupyter keras
+	echo y | sudo -H pip3 install jupyter keras seaborn torch tqdm kafka-python
 	echo y | sudo apt-get install ipython3
 	sudo -H pip3 install -U scikit-learn
 	sudo ipython3 kernel install
