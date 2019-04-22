@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
 
 from keras.layers import RepeatVector
 from keras.layers.core import Dropout, Dense, Activation
@@ -18,6 +20,10 @@ import numpy as np
 from utils import *
 from scipy import stats
 
+
+# In[18]:
+
+
 def get_data():
     path = "fastStorage/fastStorage/2013-8/1.csv"
     df = pd.read_csv(path, sep=';\t')
@@ -26,14 +32,22 @@ def get_data():
         df = df.fillna(df.mean())
     return df
 
+
+# In[19]:
+
+
 def get_benchmark():
-    path = "ydata-labeled-time-series-anomalies-v1_0/A1Benchmark/real_59.csv"
+    path = "datasets/ydata-labeled-time-series-anomalies-v1_0/A1Benchmark/real_59.csv"
     #path = "ydata-labeled-time-series-anomalies-v1_0/A3Benchmark/A3Benchmark_all.csv"
     df = pd.read_csv(path, sep=',')
     df = df.drop(['timestamp', 'is_anomaly'], 1)
     if(df.isnull().sum().sum()):
         df = df.fillna(df.mean())
     return df
+
+
+# In[4]:
+
 
 def make_data_windows(data, window_length=12):
     train_windows = []
@@ -43,6 +57,10 @@ def make_data_windows(data, window_length=12):
         window = list(data[window_range])
         train_windows.append(window)
     return train_windows
+
+
+# In[5]:
+
 
 def orchestrate_data(data, window_size, ltrain, lvalid, ltest):
     scaler = MinMaxScaler(feature_range=(0, 1))
@@ -57,6 +75,10 @@ def orchestrate_data(data, window_size, ltrain, lvalid, ltest):
     xvalid = np.array(make_data_windows(signal_valid, window_size))
     xtest = np.array(make_data_windows(signal_test, window_size))
     return xtrain, xvalid, xtest
+
+
+# In[6]:
+
 
 def modelgru(window_length, input_dim=1, hidden_dim=12):
     input_length = window_length
@@ -74,6 +96,10 @@ def modelgru(window_length, input_dim=1, hidden_dim=12):
     m.compile(loss='mse', optimizer='adam')
     return m
 
+
+# In[7]:
+
+
 def plot_reconstruction(history):
     plt.figure(figsize=(22, 4))
     plt.plot(history['loss'])
@@ -85,13 +111,17 @@ def plot_reconstruction(history):
     plt.show()
     return
 
+
+# In[9]:
+
+
 class lstm_encdec():
     def __init__(self, window_size, input_dim, hidden_dim):
         
         self.model = modelgru(window_size, input_dim, hidden_dim)
         self.window_size = window_size
         self.train_time = None
-        self.treshold = None
+        self.threshold = None
         self.update_time = 0
         self.update_count = 0
         self.input_dim = input_dim
@@ -174,6 +204,10 @@ class lstm_encdec():
         self.update_count += 1
         return
 
+
+# In[10]:
+
+
 def investigate_errors(x_test, pred_x_test, signal_test=None, window_length=None):
     max_mae_of_predictions = np.squeeze(np.max(np.square(x_test[:,1:,:] - pred_x_test[:,1:,:]), axis=1))
     avg_mae_of_predictions = np.squeeze(np.mean(np.square(x_test[:,1:,:] - pred_x_test[:,1:,:]), axis=1))
@@ -208,6 +242,10 @@ def investigate_errors(x_test, pred_x_test, signal_test=None, window_length=None
     plt.title('Anomalous Windows')
     plt.grid(True);
 
+
+# In[11]:
+
+
 def investigate_multi_errors(x_test, pred_x_test, signal_test, window_length):
     
     #max for each window is taken
@@ -226,6 +264,10 @@ def investigate_multi_errors(x_test, pred_x_test, signal_test, window_length):
         plt.fill_betweenx((signal_test.min(), signal_test.max()), w_index, w_index + window_length - 1, alpha=0.1, color='orange')
     plt.title('Anomalous Windows')
 
+
+# In[12]:
+
+
 def get_data_actual():
     path = "mem.txt"
     df = pd.read_csv(path, sep=',', header=None)
@@ -233,6 +275,9 @@ def get_data_actual():
     if(df.isnull().sum().sum()):
         df = df.fillna(df.mean())
     return df
+
+
+# In[20]:
 
 
 if __name__ == "__main__":
@@ -251,7 +296,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(22, 4))
     plt.plot(dataa)
     
-    path = "ydata-labeled-time-series-anomalies-v1_0/A1Benchmark/real_60.csv"
+    path = "datasets/ydata-labeled-time-series-anomalies-v1_0/A1Benchmark/real_60.csv"
     df = pd.read_csv(path, sep=',')
     if(df.isnull().sum().sum()):
         df = df.fillna(df.mean())
@@ -266,8 +311,15 @@ if __name__ == "__main__":
     plt.plot(df)
 
 
+# In[ ]:
 
+
+
+
+
+# In[14]:
 '''
+
 input_dim = 1
 window = []
 for index, row in df.iterrows():
@@ -322,7 +374,7 @@ instance.update_time / instance.update_count
 
 
 # In[ ]:
+
+
 '''
-
-
 
