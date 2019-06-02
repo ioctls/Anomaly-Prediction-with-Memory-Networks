@@ -1,0 +1,14 @@
+vm16-137.vcl.ncsu.edu_active_cpulatest_latest.txt_20.021055419565297776
+vm16-137.vcl.ncsu.edu_used_memorylatest_latest.txt_20.021420789036118625
+vm16-137.vcl.ncsu.edu_active_cpulatest_latest.txt_50.031777014827224705
+vm16-137.vcl.ncsu.edu_used_memorylatest_latest.txt_50.03091182926952556
+vm16-137.vcl.ncsu.edu_active_cpulatest_latest.txt_70.03732348868798379
+vm16-137.vcl.ncsu.edu_used_memorylatest_latest.txt_70.03779054935237206
+vm16-137.vcl.ncsu.edu_active_cpulatest_latest.txt_100.04835398583363146
+vm16-137.vcl.ncsu.edu_active_cpulatest_latest.txt_120.052916542583238135
+vm16-137.vcl.ncsu.edu_active_cpulatest_latest.txt_150.06274184718872336
+vm16-137.vcl.ncsu.edu_active_cpulatest_latest.txt_200.07985409899702058
+vm16-137.vcl.ncsu.edu_used_memorylatest_latest.txt_200.08079227722822635
+vm16-137.vcl.ncsu.edu_used_memorylatest_latest.txt_100.049159319549439036
+vm16-137.vcl.ncsu.edu_used_memorylatest_latest.txt_120.05664632226368418
+vm16-137.vcl.ncsu.edu_used_memorylatest_latest.txt_150.06701565854765883

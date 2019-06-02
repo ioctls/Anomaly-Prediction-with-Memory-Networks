@@ -1,0 +1,40 @@
+CPU
+window_size	accuracy  balanced_accuracy   precision		recall		f1_score	auc
+2		0.98		0.83		0.74		0.67		0.70		0.98
+15		0.94		0.88		0.38		0.81		0.52		0.80
+7		0.97		0.80		0.56		0.61		0.58		0.90
+5		0.98		0.88		0.64		0.78		0.70		0.91
+10		0.96		0.73		0.49		0.49		0.49		0.87
+20		0.96		0.57		0.42		0.14		0.21		0.83
+12		0.96		0.64		0.47		0.29		0.36		0.87
+
+
+Memory
+window_size	accuracy  balanced_accuracy   precision		recall		f1_score	auc
+15		1.00		1.00		0.18		1.00		0.31		0.99
+2		1.00		1.00		0.24		1.00		0.38		1.00
+10		1.00		1.00		0.15		1.00		0.27		0.98
+12		0.99		1.00		0.09		1.00		0.16		0.96
+5		1.00		1.00		0.39		1.00		0.56		0.99
+20		1.00		0.87		0.26		0.75		0.39		0.94
+7		1.00		0.96		0.44		0.93		0.60		0.97
+
+CPU
+window_size	online updation cost
+2		0.021 secs
+5		0.032 secs
+7		0.037 secs
+10		0.048 secs
+12		0.053 secs
+15		0.063 secs
+20		0.080 secs
+
+Memory
+window_size	online updation cost
+2		0.021 secs
+5		0.031 secs
+7		0.038 secs
+20		0.081 secs
+10		0.049 secs
+12		0.057 secs
+15		0.067 secs

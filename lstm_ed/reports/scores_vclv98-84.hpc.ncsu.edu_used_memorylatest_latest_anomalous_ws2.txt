@@ -1,0 +1,2 @@
+window_size	accuracy	balanced_accuracy	precision	recall	f_score	f01_score	tpr	fpr	auc
+2	1.0	0.92	0.67	0.83	0.74	0.67	[0. 0. 0. ... 1. 1. 1.]	[0. 0. 0. ... 1. 1. 1.]	1.0

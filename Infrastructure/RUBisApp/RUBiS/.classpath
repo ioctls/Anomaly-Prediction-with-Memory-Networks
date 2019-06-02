@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+    <classpathentry kind="src" path="Client"/>
+    <classpathentry kind="src" path="EJB_DB_id"/>
+    <classpathentry kind="src" path="EJB_EntityBean_id"/>
+    <classpathentry kind="src" path="EJB_EntityBean_id_BMP"/>
+    <classpathentry kind="src" path="EJB_SessionBean"/>
+    <classpathentry kind="src" path="EJB_Session_facade"/>
+    <classpathentry kind="src" path="EJB_local_remote"/>
+    <classpathentry kind="src" path="EJB_local_remote_CMP2.0"/>
+    <classpathentry kind="src" path="MDB"/>
+    <classpathentry kind="src" path="Servlets"/>
+    <classpathentry kind="src" path="EJB_CMP2.0"/>
+    <classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
+    <classpathentry kind="lib" path="/usr/local/j2sdkee1.3.1/lib/j2ee.jar"/>
+    <classpathentry kind="output" path="bin"/>
+</classpath>
